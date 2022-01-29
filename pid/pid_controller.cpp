@@ -1,15 +1,8 @@
 #include <time.h>
 #include "pid_controller.h"
 
-PIDController::PIDController(double Kp_, double Ki_, double Kd_, double set_point_, double sample_time_, double *clamp_vals_)
+PIDController::PIDController(double Kp_, double Ki_, double Kd_, double set_point_, double sample_time_, double *clamp_vals_): Kp(Kp_), Ki(Ki_), Kd(Kd_), set_point(set_point_), sample_time(sample_time_), clamp_vals(clamp_vals_)
 {
-    this->Kp = Kp_;
-    this->Ki = Ki_;
-    this->Kd = Kd_;
-    this->set_point = set_point_;
-    this->sample_time = sample_time_;
-    this->clamp_vals = clamp_vals_;
-
     this->p_term = 0.0;
     this->i_term = 0.0;
     this->d_term = 0.0;
